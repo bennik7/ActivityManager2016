@@ -27,6 +27,7 @@ public class ChatRoomActivity extends ActionBarActivity implements InterfaceRefr
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_chat_room);
 
+		//changed
 
         OrtcHandler.selfHandler.chatRoom = this;
 		
