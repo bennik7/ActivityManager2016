@@ -93,8 +93,7 @@ public class MainActivity extends ActionBarActivity implements InterfaceRefreshe
 				if(PreferencesManager.getInstance(MainActivity.this).loadUser() != null){
 					chatRooms.setEnabled(true);
 					chatRooms.setBackgroundColor(Color.WHITE);
-					Intent myIntent = new Intent(MainActivity.this, ChatRoomActivity.class);
-					MainActivity.this.startActivity(myIntent);
+
 				}				
 			}
 		});
