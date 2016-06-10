@@ -2,17 +2,19 @@
 <TableRow xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:padding="@dimen/rowPadding">
+    android:padding="@dimen/rowPadding"
+    android:weightSum="1">
 
         <Button
             android:id="@+id/addButton"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_marginRight="@dimen/activity_horizontal_margin"
-            android:background="@drawable/btn_add"
+            android:background="@android:drawable/ic_menu_add"
             android:minHeight="28dp"
             android:minWidth="40dp"
-            android:gravity="center" />
+            android:gravity="center"
+            android:layout_weight="0.40" />
 
         <EditText
             android:id="@+id/addEdit"

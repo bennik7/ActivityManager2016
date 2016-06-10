@@ -1,5 +1,6 @@
 package co.realtime.messagingandroidchat;
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
@@ -26,6 +27,7 @@ public class ChatRoomActivity extends ActionBarActivity implements InterfaceRefr
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_chat_room);
+
 
 		//changed
 
@@ -54,6 +56,8 @@ public class ChatRoomActivity extends ActionBarActivity implements InterfaceRefr
 				setChannels();
 			}
 		});
+
+
 	}
 	
 	@Override
@@ -107,6 +111,7 @@ public class ChatRoomActivity extends ActionBarActivity implements InterfaceRefr
 
 	private void setChannels() {
 		TableLayout chatRoomsTable = (TableLayout) findViewById(R.id.chatRoomTable);
+		chatRoomsTable.setBackgroundColor(Color.GRAY);
 		if(channels.size() == 0)
 		{
 			editing = true;

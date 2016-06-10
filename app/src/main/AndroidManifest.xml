@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="co.realtime.messagingandroidchat">
 
@@ -11,16 +12,14 @@
 
     <uses-permission android:name="rtmchat.realtime.co.rtmchat.permission.C2D_MESSAGE" />
     <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
-
-    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
-
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
 
     <application
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
-        android:theme="@style/AppTheme" >
-        <activity android:name=".MainActivity" >
+        android:theme="@style/AppTheme">
+        <activity android:name="com.activitymanager.RegisterLoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -28,21 +27,20 @@
             </intent-filter>
         </activity>
         <activity
+            android:name=".MainActivity"
+            android:label="@string/title_activity_chat_rooms"></activity>
+        <activity
             android:name=".ChatRoomActivity"
-            android:label="@string/title_activity_chat_rooms" >
-        </activity>
+            android:label="@string/title_activity_chat_rooms"></activity>
         <activity
             android:name=".MessageActivity"
-            android:label="@string/title_activity_messages" >
-        </activity>
+            android:label="@string/title_activity_messages"></activity>
         <activity
             android:name=".ComposeActivity"
-            android:label="@string/title_activity_compose" >
-        </activity>
+            android:label="@string/title_activity_compose"></activity>
         <activity
-            android:name="NotificationActivity"
-            android:label="@string/title_activity_notification" >
-        </activity>
+            android:name=".NotificationActivity"
+            android:label="@string/title_activity_notification"></activity>
 
         <meta-data
             android:name="com.google.android.gms.version"
@@ -50,15 +48,20 @@
 
         <receiver
             android:name="receiver.GcmReceiver"
-            android:permission="com.google.android.c2dm.permission.SEND" >
+            android:permission="com.google.android.c2dm.permission.SEND">
             <intent-filter>
                 <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+
                 <category android:name="rtmchat.realtime.co.rtmchat" />
             </intent-filter>
         </receiver>
 
         <service android:name="ibt.ortc.extensibility.GcmOrtcIntentService" />
 
+        <activity
+            android:name="com.activitymanager.NavigationDrawer"
+            android:label="@string/title_activity_navigation_drawer"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>

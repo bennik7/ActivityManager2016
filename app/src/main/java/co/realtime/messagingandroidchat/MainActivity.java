@@ -24,7 +24,7 @@ public class MainActivity extends ActionBarActivity implements InterfaceRefreshe
     @Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_main);
+	 	setContentView(R.layout.activity_main);
 
 		OrtcHandler.prepareClient(getApplicationContext(), this);
 
@@ -57,7 +57,7 @@ public class MainActivity extends ActionBarActivity implements InterfaceRefreshe
 		            	if(OrtcHandler.selfHandler.isConnected){
 		            		bt.setEnabled(true);
 		            		bt.setBackgroundColor(Color.WHITE);
-		            		return true;
+							return true;
 		            	}
 		            }
 		            return false;
@@ -93,6 +93,8 @@ public class MainActivity extends ActionBarActivity implements InterfaceRefreshe
 				if(PreferencesManager.getInstance(MainActivity.this).loadUser() != null){
 					chatRooms.setEnabled(true);
 					chatRooms.setBackgroundColor(Color.WHITE);
+					Intent myIntent = new Intent(MainActivity.this, ChatRoomActivity.class);
+					MainActivity.this.startActivity(myIntent);
 				}				
 			}
 		});
