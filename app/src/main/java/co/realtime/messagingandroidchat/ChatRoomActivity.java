@@ -57,6 +57,14 @@ public class ChatRoomActivity extends ActionBarActivity implements InterfaceRefr
 			}
 		});
 
+		//Add channel
+		//===============================================================
+		String newChannel = "Rumpi GB";
+		OrtcHandler.subscribeChannel(newChannel
+				.toString());
+		ChatRoomActivity chatController = (ChatRoomActivity) this;
+		chatController.addChat(newChannel.toString());
+		//===============================================================
 
 	}
 	
